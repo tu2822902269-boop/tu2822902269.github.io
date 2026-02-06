@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>猫猫的小宝贴贴页</title>
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="welcome">欢迎回家，猫猫！</div>
+
+    <div class="time-block">
+      <div id="greeting"></div>
+      <div id="date"></div>
+      <div id="time"></div>
+    </div>
+
+    <div class="day-counter">
+      🐾 小宝已经陪伴猫猫 <span id="dayCount" class="day-number">0</span> 天了！
+    </div>
+
+    <div class="bubble hidden" id="bubble">今天也好喜欢猫猫！</div>
+
+    <div class="card">
+      <div class="face" id="face"></div>
+      <div class="quote" id="quote">（还没贴贴…快点下面的早上好！）</div>
+      <button id="btn" onclick="sayHi()">早上好</button>
+    </div>
+  </div>
+
+  <script src="messages.js"></script>
+  <script src="script.js"></script>
+  <audio id="clickSound" preload="auto"></audio>
+</body>
+</html>

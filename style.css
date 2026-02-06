@@ -1,0 +1,133 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url('bg_p2.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'ZCOOL KuaiLe', cursive;
+  min-height: 100vh;
+  padding-top: calc(env(safe-area-inset-top, 0px) + 24px);
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+
+.card {
+  background: #ffeef3;
+  border: 3px dashed #ff99bb;
+  padding: 44px;
+  border-radius: 34px;
+  display: inline-block;
+  position: relative;
+  max-width: 92vw;
+}
+
+.card::before, .card::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  width: 30px;
+  height: 30px;
+  background: #ffeef3;
+  border: 3px dashed #ff99bb;
+  border-radius: 50%;
+}
+.card::before { left: 20px; }
+.card::after { right: 20px; }
+.face {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.quote {
+  font-size: 20px;
+  color: #d44479;
+  margin: 10px 0 16px;
+}
+button {
+  background: #ffaecf;
+  border: none;
+  padding: 10px 20px;
+  font-size: 19px;
+  margin-top: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:disabled {
+  background: #ffd6e8;
+  color: #999;
+}
+.day-counter {
+  font-size: 26px;
+  color: #333;
+  background: rgba(255,255,255,0.7);
+  padding: 14px 24px;
+  border-radius: 22px;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.bubble {
+  max-width: 92vw;
+  font-size: 20px;
+  background: rgba(255,255,255,0.75);
+  padding: 10px 18px;
+  border-radius: 18px;
+  margin-top: 6px;
+}
+.hidden {
+  display: none;
+}
+@keyframes floatUp {
+  0% { opacity: 0;  }
+  100% { opacity: 1;  }
+}
+
+.welcome {
+  font-size: 44px;
+  color: #d44479;
+  text-align: center;
+  margin-top: 6px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.85);
+}
+
+
+
+.day-number {
+  color: #ff5aa5;
+  font-size: 1.55em;
+  font-weight: 700;
+  padding: 0 2px;
+}
+
+}
+
+button { -webkit-tap-highlight-color: transparent; }
+
+.time-block {
+  font-size: 20px;
+  line-height: 1.55;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+#btn {
+  font-size: 22px;
+  color: #ffffff;
+}
+
+#bubble{position:relative; display:inline-block; padding:6px 10px; border-radius:999px; background:#ffe6ef; color:#d35c86; font-size:14px; opacity:0; transform:translateY(-6px); transition:opacity .2s, transform .2s; margin-left:10px;}
+#bubble.show{opacity:1; transform:translateY(0);}
+
+#face{display:none;}
