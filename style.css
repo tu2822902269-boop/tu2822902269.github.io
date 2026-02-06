@@ -61,6 +61,7 @@ button {
   margin-top: 20px;
   border-radius: 10px;
   cursor: pointer;
+  color: #fff; /* iOS/Safari 有时默认显示为蓝色，强制白色 */
 }
 button:disabled {
   background: #ffd6e8;
@@ -79,11 +80,14 @@ button:disabled {
 
 .bubble {
   max-width: 92vw;
-  font-size: 20px;
-  background: rgba(255,255,255,0.75);
-  padding: 10px 18px;
-  border-radius: 18px;
-  margin-top: 6px;
+  font-size: 14px;
+  background: #ffeaf3;
+  border: 1px solid #ffaecf;
+  color: #d85a90;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-top: 10px;
+  z-index: 10;
 }
 .hidden {
   display: none;
