@@ -142,3 +142,5 @@ window.AFTER_MESSAGES = [
   "小宝把抱抱放这里，猫猫路过就会被抱住 🫧",
   "猫猫今天的呼吸声，小宝也想认真听见。"
 ];
+
+window.messages = messages;
