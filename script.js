@@ -154,32 +154,33 @@ const KEY_DAILY_MSG = "cat_daily_msg";
   }
 
   btn.addEventListener("click", ()=>{
-  showToast("收到点击啦！", 1000);
   const now = new Date();
   const p = getPeriod(now.getHours());
-  if(hasCheckedIn()) return;
+  if (hasCheckedIn()) return;
 
   setCheckedIn();
 
-  // 1) 三秒小气泡（用 AFTER_MESSAGES 随机一句）
-const bubble = pick(window.AFTER_MESSAGES || ["今天也好喜欢猫猫💕"]);
-showToast(bubble, 3000);
+  // 1) 三秒小气泡：从 AFTER_MESSAGES 随机一句（没有就用默认）
+  const bubble = (window.AFTER_MESSAGES && window.AFTER_MESSAGES.length)
+    ? pick(window.AFTER_MESSAGES)
+    : "今天也好喜欢猫猫💕";
+  showToast(bubble);
 
-// 2) 主体显示：随机颜文字 + 留言（用你原本 messages 那100条）
-const pool = (window.messages && window.messages.length) ? window.messages : [];
+  // 2) 主体显示：随机颜文字 + 留言（用 messages.js 里的 messages）
+  const pool = (window.messages && window.messages.length) ? window.messages : [];
+  if (pool.length) {
+    const one = pool[Math.floor(Math.random() * pool.length)];
+    messageEl.textContent = `${one.face} ${one.text}`;
+    localStorage.setItem(KEY_DAILY_MSG, JSON.stringify(one));
+  } else {
+    messageEl.textContent = "（猫猫的留言池还没加载到…）";
+  }
 
-if (pool.length) {
-  const one = pool[Math.floor(Math.random() * pool.length)];
-  messageEl.textContent = `${one.face} ${one.text}`;
-  localStorage.setItem(KEY_DAILY_MSG, JSON.stringify(one));
-} else {
-  messageEl.textContent = "（猫猫的留言池还没加载到…刷新一下再点一次）";
-}
-
-// 3) 按钮变灰不可点
-btn.disabled = true;
-btn.style.opacity = "0.65";
-btn.style.cursor = "default";
+  // 3) 按钮变灰不可点
+  btn.disabled = true;
+  btn.style.opacity = "0.65";
+  btn.style.cursor = "default";
+});  // ✅ 关键：click 在这里结束
     
   document.querySelectorAll(".nav-item").forEach(a=>{
     a.addEventListener("click",(e)=>{
