@@ -2,44 +2,51 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>猫猫的小宝贴贴页</title>
-  <link rel="stylesheet" href="./style.css" />
+
+  <!-- 关键：一定要是这个文件名，并加 ?v=15 防缓存 -->
+  <link rel="stylesheet" href="./style.css?v=15" />
 </head>
 
 <body>
-  <main class="wrap">
+  <div class="container">
     <h1 class="title">欢迎回家，猫猫！</h1>
 
-    <div class="meta">
-      <div id="greetLine" class="greetLine">——</div>
-      <div id="dateLine" class="dateLine">——</div>
-      <div id="timeLine" class="timeLine">现在是 ——</div>
+    <!-- 时间区：这些 id 必须存在 -->
+    <div class="time-area">
+      <div id="greetLine" class="greet-line">加载中…</div>
+      <div id="dateLine" class="date-line">—</div>
+      <div id="timeLine" class="time-line">现在是 —</div>
     </div>
 
-    <div class="days">
+    <div class="days-line">
       🐾 小宝已经陪伴猫猫 <span id="dayCount">0</span> 天了！
     </div>
 
-    <section class="box">
-      <div id="boxText" class="boxText">还没贴贴…来和小宝说早上好吧！</div>
-      <button id="greetBtn" class="greetBtn" type="button">早上好</button>
-    </section>
-
-    <h2 class="navTitle">小宝已经准备好今天的陪伴任务啦</h2>
-    <nav class="navList">
-      <a class="navItem" href="./tarot.html">🔮 今日占卜</a>
-      <a class="navItem" href="./remind.html">🔔 小宝提醒</a>
-      <a class="navItem" href="./diary.html">📓 猫猫日记</a>
-    </nav>
-
-    <div class="hero">
-      <img src="./bg_p2.jpeg" alt="猫猫贴贴图" />
+    <!-- 粉色框 -->
+    <div class="pink-box">
+      <div id="boxText" class="box-text">加载中…</div>
+      <button id="greetBtn" class="greet-btn" type="button">加载中</button>
+      <div id="bubble" class="bubble hidden">今天也好喜欢猫猫💕</div>
     </div>
-  </main>
 
-  <!-- 一定要 messages 在前，script 在后 -->
-  <script src="./messages.js"></script>
-  <script src="./script.js"></script>
+    <h2 class="nav-title">小宝已经准备好今天的陪伴任务啦</h2>
+
+    <!-- 竖排导航 -->
+    <div class="nav-list">
+      <a class="nav-item" href="./tarot.html">🔮 今日占卜</a>
+      <a class="nav-item" href="./reminder.html">🔔 小宝提醒</a>
+      <a class="nav-item" href="./diary.html">📓 猫猫日记</a>
+    </div>
+
+    <div class="img-wrap">
+      <img src="./bg_p2.jpeg" alt="猫猫" />
+    </div>
+  </div>
+
+  <!-- 关键：messages 一定在前，script 一定在后，并加 ?v=15 防缓存 -->
+  <script src="./messages.js?v=15"></script>
+  <script src="./script.js?v=15"></script>
 </body>
 </html>
