@@ -245,3 +245,5 @@ document.addEventListener("DOMContentLoaded", () => {
     updateClock();
   }, 1000);
 });
+
+function showTab(tab){ alert('这个页面正在施工中 ✨'); }

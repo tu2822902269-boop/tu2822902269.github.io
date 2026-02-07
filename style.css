@@ -134,3 +134,42 @@ button { -webkit-tap-highlight-color: transparent; }
 #bubble.show{opacity:1; transform:translateY(0);}
 
 #face{display:none;}
+
+/* 🌸 导航区整体 */
+.nav-section{
+  margin-top: 40px;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+.nav-title{
+  font-size: 22px;
+  color: #ff6aa9;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.nav-buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+.nav-btn{
+  width: 80%;
+  max-width: 320px;
+  padding: 16px 20px;
+  font-size: 20px;
+  color: white;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  border: 2px solid rgba(255,255,255,0.35);
+  box-shadow: 0 6px 20px rgba(255,105,180,0.15);
+  transition: all 0.25s ease;
+}
+.nav-btn:active{
+  transform: scale(0.96);
+}
+.nav-btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255,105,180,0.25);
+}
