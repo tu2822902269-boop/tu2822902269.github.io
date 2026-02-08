@@ -127,3 +127,6 @@ html, body{
 .nav-item{
   color:#ff6fae;
 }
+
+.page.hidden { display: none; }
+.page { display: block; }
