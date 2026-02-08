@@ -130,3 +130,10 @@ html, body{
 
 .page.hidden { display: none; }
 .page { display: block; }
+
+.page{
+  min-height: 100vh;
+  padding: 20px 16px;
+  background: #fff; /* 或者你想要的背景 */
+}
+.hidden{ display:none !important; }
